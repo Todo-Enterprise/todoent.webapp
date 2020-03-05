@@ -6,7 +6,9 @@ Install **node js** and **npm** on your computer first (using browser on Windows
 
 Open your terminal and run command in the root project folder: "npm i"
 
+## Install VS Code plugins
 
+Open VS Code extensions tab and install ESLint. Next, open your settings and assign a shortcut for "ESLint: fix all auto-fixable Problems"
 
 # Running server
 
