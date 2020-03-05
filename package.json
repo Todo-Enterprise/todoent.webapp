@@ -1,0 +1,25 @@
+{
+  "name": "todo-enterprise",
+  "version": "0.0.1",
+  "description": "Make TODOs great again",
+  "main": "src/main.js",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Defake/todo-enterprise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Defake/todo-enterprise/issues"
+  },
+  "homepage": "https://github.com/Defake/todo-enterprise#readme"
+}
