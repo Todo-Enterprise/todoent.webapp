@@ -1,14 +1,12 @@
 # Installation
 
-Install node js and npm on your computer first (using browser on Windows or package manager on mac)
+Install **node js** and **npm** on your computer first (using browser on Windows or package manager on mac/unix)
 
-## Install express
+## Install dependencies
 
-In the root of the project folder run in terminal: "npm install express --save"
+Open your terminal and run command in the root project folder: "npm i"
 
-## Install ejs
 
-In the root of the project folder run in terminal: "npm install ejs"
 
 # Running server
 
