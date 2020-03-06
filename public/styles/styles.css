@@ -1,8 +1,63 @@
 body {
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  font-family: sans-serif;
 }
 
-h2 {
-    color: red;
+a {
+  text-decoration: none;
+}
+
+div.header {
+  height: 30px;
+  padding: 12px 20px;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px #222;
+  text-align: right;
+}
+
+div.title {
+  font-weight: 700;
+  font-size: 18pt;
+  float: left;
+}
+
+div.title a,
+div.title a:visited {
+  color: #222;
+}
+
+div.greeting {
+  font-size: 14pt;
+  color: #222;
+  margin-right: 10px;
+}
+
+div.container {
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+div.task {
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0px 1px 3px #777;
+  padding: 10px 10px 9px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
+
+div.task div.finish-button {
+  border: 1px solid #222;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  margin: 2px 5px 5px;
+  background-color: #f7f7f7;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
 }

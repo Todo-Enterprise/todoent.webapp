@@ -7,7 +7,21 @@
 </head>
 
 <body>
-  <h2>Hello <%= name %>!</h2>
+  <div class="header">
+    <div class="title"><a href="/">TODO Enterprise</a></div>
+    <div class="greeting">
+      <!-- Hello <%= name %>! -->
+    </div>
+  </div>
+
+  <div class="container">
+    <% tasks.forEach(function(task) { %>
+      <div class="task">
+        <div class="finish-button"></div>
+        <%= task %>
+      </div>
+    <% }); %>
+  </div>
 </body>
 
 </html>
