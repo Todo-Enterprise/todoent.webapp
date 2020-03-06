@@ -5,7 +5,7 @@ const app = express();
 const hostname = '127.0.0.1';
 const port = 3000;
 
-require('./config/server-config')(app);
+require('./config/server-config')(app, express);
 require('./api/routes')(app);
 
 app.listen(port, () => {
