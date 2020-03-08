@@ -3,7 +3,9 @@ const express = require('express');
 
 const app = express();
 
-dotenv.config();
+if (process.env.NODE_ENV === 'dev') {
+  dotenv.config();
+}
 
 require('./config/server-config')(app, express);
 require('./api/routes')(app);
