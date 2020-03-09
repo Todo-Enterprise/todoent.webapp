@@ -8,7 +8,7 @@ router.use((req, res, next) => {
 });
 
 router.get('/', (req, res) => {
-  res.render('index', { tasks: ['Add scripts', 'Add react', 'Wash hands'] });
+  res.render('index', { tasks: ['Add scripts', 'Add react', 'Wash hands', 'Wash legs'] });
 });
 
 module.exports = (app) => {
