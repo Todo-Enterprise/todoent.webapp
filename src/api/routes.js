@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('../services/dal');
 
 const router = express.Router();
 
@@ -8,7 +9,7 @@ router.use((req, res, next) => {
 });
 
 router.get('/', (req, res) => {
-  res.render('index', { tasks: ['Add scripts', 'Add react', 'Wash hands', 'Wash legs'] });
+  res.render('index', { tasks: db.getTasks() });
 });
 
 module.exports = (app) => {
