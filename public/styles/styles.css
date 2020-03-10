@@ -61,3 +61,14 @@ div.task div.finish-button {
   vertical-align: middle;
   cursor: pointer;
 }
+
+div.task div.finish-button:hover div.check,
+div.task div.finish-button.finished div.check {
+  margin-top: 3px;
+  margin-left: 5px;
+  transform: rotate(45deg);
+  height: 8px;
+  width: 6px;
+  border-bottom: 1px solid #394;
+  border-right: 1px solid #394;
+}
