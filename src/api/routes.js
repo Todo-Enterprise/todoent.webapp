@@ -8,7 +8,7 @@ router.use((req, res, next) => {
   next();
 });
 
-router.post('/addTask', (req, res) => {
+router.post('/add-task', (req, res) => {
   db.addTask(req.body.task);
   res.redirect('/');
 });
