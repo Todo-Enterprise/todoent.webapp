@@ -8,6 +8,11 @@ router.use((req, res, next) => {
   next();
 });
 
+router.post('/addTask', (req, res) => {
+  db.addTask(req.body.task);
+  res.redirect('/');
+});
+
 router.get('/', (req, res) => {
   res.render('index', { tasks: db.getTasks() });
 });

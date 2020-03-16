@@ -61,3 +61,12 @@ div.task div.finish-button {
   vertical-align: middle;
   cursor: pointer;
 }
+
+div.taskInputField {
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0px 1px 3px #777;
+  padding: 10px 10px 9px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
