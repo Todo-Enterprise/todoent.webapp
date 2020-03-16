@@ -23,11 +23,15 @@
   <div class="container">
     <% tasks.forEach(function(task) { %>
       <div class="task">
-        <div class="finish-button"></div>
+        <div class="finish-button">
+          <div class="check"></div>
+        </div>
         <%= task %>
       </div>
     <% }); %>
   </div>
 </body>
+
+<script type="text/javascript" src="/public/scripts/scripts.js"></script>
 
 </html>
