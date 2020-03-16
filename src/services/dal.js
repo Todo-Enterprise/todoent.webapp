@@ -1,5 +1,5 @@
 const memoryDatabase = {
-  tasks: ['Add scripts', 'Add react', 'Add input field', 'Wash legs'],
+  tasks: [],
 };
 
 function getTasks() {
@@ -13,7 +13,6 @@ function addTask(taskName) {
 function removeTask(/* taskName */) {
   // not implemented
 }
-
 
 module.exports = {
   getTasks,
