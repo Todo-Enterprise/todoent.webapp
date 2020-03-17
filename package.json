@@ -4,6 +4,7 @@
   "description": "Make TODOs great again",
   "main": "src/main.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "editorconfig": "^0.15.3",
     "ejs": "^3.0.1",
