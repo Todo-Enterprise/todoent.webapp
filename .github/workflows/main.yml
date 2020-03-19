@@ -5,14 +5,11 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
 on:
-  push:
-    branches: 
-      - master
-    tags:        
-      - v*
   pull_request:
     branches: 
       - master
+    tags:        
+      - 'v*'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -38,6 +35,7 @@ jobs:
         docker logout $REGISTRY_URL
 
   deploy:
+    needs: build
     runs-on: ubuntu-18.04
     steps:
     - name: Deploy image on the site
@@ -45,5 +43,5 @@ jobs:
       env:
         USERNAME: ${{ secrets.ssh_user }}
         HOST: ${{ secrets.ssh_url }}
-        SCRIPT: ~/app/deploy.sh
+        SCRIPT: ${{ secrets.deploy_script_path }}
         KEY: ${{ secrets.ssh_private_key }}
