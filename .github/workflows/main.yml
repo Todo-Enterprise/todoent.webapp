@@ -39,27 +39,11 @@ jobs:
 
   deploy:
     runs-on: ubuntu-18.04
-    env:
-      REGISTRY_URL: ${{ secrets.registry_url }}
-      SSH_PRIVATE_KEY: ${{ secrets.ssh_private_key }}
-      SSH_USER: ${{ secrets.ssh_user }}
-      SSH_URL: ${{ secrets.ssh_url }}
-      SSH_APP_PATH: ${{ secrets.ssh_app_path }}
-
     steps:
-    # Runs a set of commands using the runners shell
-    - name: Run application on server
-      run: |
-        # Setup SSH deploy keys
-        apt-get update -qq
-        apt-get install -qq git
-        'which ssh-agent || ( apt-get install -qq openssh-client )'
-        eval $(ssh-agent -s)
-        ssh-add <(echo "$SSH_PRIVATE_KEY")
-        mkdir -p ~/.ssh
-        '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-        ssh $SSH_USER@$SSH_URL
-        docker pull $REGISTRY_URL/todoent
-        cd $SSH_APP_PATH
-        docker-compose up -d
-        logout
+    - name: Deploy image on the site
+      uses: appleboy/ssh-action@master
+      env:
+        USERNAME: ${{ secrets.ssh_user }}
+        HOST: ${{ secrets.ssh_url }}
+        SCRIPT: ~/app/deploy.sh
+        KEY: ${{ secrets.ssh_private_key }}
