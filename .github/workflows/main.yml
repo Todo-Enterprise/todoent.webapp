@@ -21,6 +21,8 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       REGISTRY_URL: ${{ secrets.registry_url }}
+      REGISTRY_USER: ${{ secrets.registry_user }}
+      REGISTRY_PASSWORD: ${{ secrets.registry_password }}
 
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -28,6 +30,12 @@ jobs:
 
     - name: Build the Docker image
       run: docker build -t $REGISTRY_URL/todoent:$(date +%s) -t $REGISTRY_URL/todoent:latest .
+
+    - name: Upload image to the registry
+      run: |
+        echo $REGISTRY_PASSWORD | docker login -u $REGISTRY_USER --password-stdin $REGISTRY_URL
+        docker push $REGISTRY_URL/todoent
+        docker logout $REGISTRY_URL
 
   deploy:
     runs-on: ubuntu-18.04
@@ -37,16 +45,8 @@ jobs:
       SSH_USER: ${{ secrets.ssh_user }}
       SSH_URL: ${{ secrets.ssh_url }}
       SSH_APP_PATH: ${{ secrets.ssh_app_path }}
-      REGISTRY_USER: ${{ secrets.registry_user }}
-      REGISTRY_PASSWORD: ${{ secrets.registry_password }}
 
     steps:
-    - name: upload image to the registry
-      run: |
-        echo $REGISTRY_PASSWORD | docker login -u $REGISTRY_USER --password-stdin $REGISTRY_URL
-        docker push $REGISTRY_URL/todoent
-        docker logout $REGISTRY_URL
-
     # Runs a set of commands using the runners shell
     - name: Run application on server
       run: |
