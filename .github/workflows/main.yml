@@ -1,0 +1,45 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request 
+# events but only for the master branch
+on:
+  push:
+    branches: 
+      - master
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-18.04
+    env:
+      REGISTRY_URL: ${{ secrets.registry_url }}
+      REGISTRY_USER: ${{ secrets.registry_user }}
+      REGISTRY_PASSWORD: ${{ secrets.registry_password }}
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: docker build -t $REGISTRY_URL/todoent:$(date +%s) -t $REGISTRY_URL/todoent:latest .
+
+    - name: Upload image to the registry
+      run: |
+        echo $REGISTRY_PASSWORD | docker login -u $REGISTRY_USER --password-stdin $REGISTRY_URL
+        docker push $REGISTRY_URL/todoent
+        docker logout $REGISTRY_URL
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Deploy image on the site
+      uses: appleboy/ssh-action@master
+      env:
+        USERNAME: ${{ secrets.ssh_user }}
+        HOST: ${{ secrets.ssh_url }}
+        SCRIPT: ${{ secrets.deploy_script_path }}
+        KEY: ${{ secrets.ssh_private_key }}
