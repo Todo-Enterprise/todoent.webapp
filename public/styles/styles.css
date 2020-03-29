@@ -81,3 +81,13 @@ div.task div.finish-button.finished div.check {
   border-bottom: 1px solid #394;
   border-right: 1px solid #394;
 }
+
+div.done {
+  background-color:#cccccc;
+  text-decoration: line-through;
+  width: 100%;
+  box-shadow: 0px 1px 3px #777;
+  padding: 10px 10px 9px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
