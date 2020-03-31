@@ -1,12 +1,19 @@
 const memoryDatabase = {
-  tasks: [],
+  tasks: [
+    {
+      id: 0, name: 'Test task', isDone: false, addedAt: '2020.01.01',
+    },
+    {
+      id: 0, name: 'Test done task', isDone: true, addedAt: '2020.01.01',
+    },
+  ],
 };
 
 function Task(name) {
-  this.id = false;
+  this.id = 0;
   this.name = name;
   this.isDone = false;
-  this.addedAt = false;
+  this.addedAt = '2020.01.01';
 }
 
 function getTasks() {
@@ -23,7 +30,6 @@ function removeTask(/* taskName */) {
 }
 
 module.exports = {
-  Task,
   getTasks,
   addTask,
   removeTask,
