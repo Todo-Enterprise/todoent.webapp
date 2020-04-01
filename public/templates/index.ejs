@@ -22,12 +22,16 @@
 
   <div class="container">
     <% tasks.forEach(function(task) { %>
-      <div class="task">
+      <% if (task.isDone == true) { %>
+        <div class="task">
+      <% } else { %>
+        <div class="done">
+      <% } %>
         <div class="finish-button">
           <div class="check"></div>
+        </div>        
+          <%= task.name %>          
         </div>
-        <%= task %>
-      </div>
     <% }); %>
   </div>
 </body>
