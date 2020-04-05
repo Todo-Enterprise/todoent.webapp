@@ -43,9 +43,9 @@ div.container {
 
 div.task {
   background-color: #fff;
-  width: 100%;
+  width: 96%;
   box-shadow: 0px 1px 3px #777;
-  padding: 10px 10px 9px;
+  padding: 10px 2% 9px;
   margin-top: 10px;
   vertical-align: middle;
 }
@@ -62,12 +62,10 @@ div.task div.finish-button {
   cursor: pointer;
 }
 
-div.taskInputField {
-  background-color: #fff;
+div.task-input-field {
   width: 100%;
-  box-shadow: 0px 1px 3px #777;
-  padding: 10px 10px 9px;
-  margin-top: 10px;
+  padding: 0;
+  margin-top: 0;
   vertical-align: middle;
 }
 
@@ -85,9 +83,22 @@ div.task div.finish-button.finished div.check {
 div.done {
   text-decoration: line-through;
   background-color: #cccccc;
-  width: 100%;
+  width: 96%;
   box-shadow: 0px 1px 3px #777;
-  padding: 10px 10px 9px;
+  padding: 10px 2% 9px;
   margin-top: 10px;
   vertical-align: middle;
+}
+
+.task-input {
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 78%;
+}
+
+.btn-add-new-task {
+  border: 1px solid gray;
+  border-radius: 4px;
+  float: right;
+  width: 20%;
 }
