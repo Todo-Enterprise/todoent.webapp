@@ -9,13 +9,27 @@
 <body>
   <div class="header">
     <div class="title"><a href="/">TODO Enterprise</a></div>
-    
+
     <div class="menu">
-        <div><a href="login">Login</a></div>
-        <div><a href="about">About</a></div>
+      <div><a href="login">Login</a></div>
+      <div><a href="about">About</a></div>
     </div>
   </div>
 
+  <div class="container" >
+      <form action="#" class="authorization">
+        <h2 class="text-center">Authorization</h2>
+          <div class="form-group" ng-class="{'not-empty': userName.length}">
+            <input type="text" class="form-control" name="user"  id="user" ng-model="userName"/>
+            <label for="user" class="animated-label">Username</label>
+          </div>
+          <div class="form-group" ng-class="{'not-empty': passWord.length}">
+            <input type="password" class="form-control" name="pass"  id="pass" ng-model="passWord"/>
+            <label for="pass" class="animated-label">Password</label>
+          </div>
+          <button type="submit" name="submit">Submit</button>   
+      </form>
+  </div>
 
 </body>
 
