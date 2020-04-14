@@ -2,35 +2,71 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TODO Enterprise</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="/public/styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="/public/styles/helpers.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
-  <div class="header">
-    <div class="title"><a href="/">TODO Enterprise</a></div>
-    
-    <div class="menu">
-      <div><a href="about">About</a></div>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <i class="fas fa-stream"></i>
+        <div class="has-padding-left-xs is-size-5 has-text-weight-bold">TODO Enterprise</div>
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-  </div> 
-  
-  <div class="container"> 
-    <div style="padding-top: 20px;" class="why">
-      <div align="center">В последнее время темп жизни настолько увеличился, что удержать все в
-    голове практически невозможно. Помните то гнетущее чувство, когда вы забыли о чем-то важном?
-    Забудьте! Перед вами детище, которое создавалось со времен динозавров! Они записывали, что им нужно
-    сделать, до того как замёрзнуть. Не будем же отставать от братьев наших меньш... Кхм, кхм. Пользуйтесь короче!
-    Перед вами TODO Enterprise.
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/about">About</a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light" href="/login">Log in</a>
+          </div>
+        </div>
       </div>
     </div>
-  
-    <div style="padding-top: 20px;" class="developers">
-      <div align="center">Directed by: Defake</div>
-      <div align="center">Apprentice: GeneralShtorks</div>
-      <div align="center">Apprentice: Kimpo</div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Забыли о чем-то?</h1>
+      <div>
+        В последнее время темп жизни настолько увеличился, что удержать все в
+        голове практически невозможно. Помните то гнетущее чувство, когда вы забыли о чем-то важном?
+        Забудьте! Перед вами детище, которое создавалось со времен динозавров! Они записывали, что им нужно
+        сделать, до того как замёрзнуть. Не будем же отставать от братьев наших меньш... Кхм, кхм. Пользуйтесь короче!
+        Перед вами TODO Enterprise.
+      </div>
+      
+      
     </div>
-  </div>
+
+    <div class="container">
+      <div>Directed by: Defake</div>
+      <div>Apprentice: GeneralShtorks</div>
+      <div>Apprentice: Kimpo</div>
+    </div>
+  </section>
+
 </body>
 
 <script type="text/javascript" src="/public/scripts/scripts.js"></script>
