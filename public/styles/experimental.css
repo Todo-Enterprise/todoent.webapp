@@ -1,0 +1,28 @@
+body {
+  background-color: #f7f7f7;
+  font-family: sans-serif;
+}
+
+div.container {
+  max-width: 500px;
+}
+
+.box.tasknew {
+  padding: 0.5rem 0;
+}
+
+.tasknew .checkmark {
+  cursor: pointer;
+}
+
+.tasknew .checkmark * {
+  color: white;
+}
+
+.tasknew:hover .checkmark * {
+  color: #ccc;
+}
+
+.tasknew:hover .checkmark:hover * {
+  color: #0c0;
+}
