@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="/public/styles/experimental.css">
   <link rel="stylesheet" type="text/css" href="/public/styles/helpers.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -74,8 +74,23 @@
       <h1 class="is-size-1 title">List</h1>
       <div class="tabs">
         <ul>
-          <li class="is-active"><a>by priority</a></li>
-          <li><a>by alphabet</a></li>
+          <li class="is-active">
+            <a>
+              <span class="icon is-small"><i class="fas fa-long-arrow-alt-down"></i></span>
+              <span>by priority</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon"><i class="fas fa-sort-amount-up-alt"></i></span>
+              <span>by date</span>
+            </a></li>
+          <li>
+            <a>
+              <span class="icon"><i class="fas fa-sort-alpha-up"></i></span>
+              <span>by alphabet</span>
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -90,9 +105,7 @@
             <input class="input is-borderless is-shadowless is-marginless is-paddingless"
               style="margin-right: 10px; padding-right: 0;" type="text" placeholder="Task name 1">
           </div>
-          <div class="column is-narrow" style="width: 20px;">
-
-          </div>
+          <div class="column is-narrow" style="width: 20px;"></div>
         </div>
       </div>
 
@@ -126,8 +139,8 @@
 
         <div class="column">
           <div class="tasknew box">
-            <input class="input is-borderless is-shadowless is-marginless"
-              style="margin-right: 10px; padding-right: 0;" type="text" placeholder="Task name 3">
+            <input class="input is-borderless is-shadowless is-marginless" style="margin-right: 10px; padding-right: 0;"
+              type="text" placeholder="Task name 3">
           </div>
         </div>
       </div>
@@ -143,8 +156,8 @@
 
         <div class="column">
           <div class="tasknew box">
-            <input class="input is-borderless is-shadowless is-marginless"
-              style="margin-right: 10px; padding-right: 0;" type="text" placeholder="Task name 4">
+            <input class="input is-borderless is-shadowless is-marginless" style="margin-right: 10px; padding-right: 0;"
+              type="text" placeholder="Task name 4">
           </div>
         </div>
       </div>
@@ -219,7 +232,7 @@
         </div>
       </div>
 
-      
+
 
 
       <article class="media box has-margin-top-5">
