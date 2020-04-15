@@ -16,7 +16,7 @@ div.container {
 }
 
 .tasknew .checkmark * {
-  color: white;
+  color: transparent;
 }
 
 .tasknew:hover .checkmark * {
@@ -24,5 +24,13 @@ div.container {
 }
 
 .tasknew:hover .checkmark:hover * {
+  color: #0c0;
+}
+
+.button-checkmark .icon {
+  color: transparent;
+}
+
+.button-checkmark:hover .icon {
   color: #0c0;
 }
