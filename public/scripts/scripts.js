@@ -1,6 +1,6 @@
-import '../styles/helpers.css';
 import '../styles/experimental.css';
 import '../styles/styles.css';
+import '../styles/helpers.scss';
 
 // Bulma burger menu code
 document.addEventListener('DOMContentLoaded', () => {
