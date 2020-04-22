@@ -92,18 +92,25 @@ div.done {
   vertical-align: middle;
 }
 
+.login-form {
+  margin: 0 auto;
+  width: 350px;
+}
+
+.login-form label {
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
 .form-group {
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .form-control {
 
   display: block;
-  width: 50%;
+  width: 90%;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
-  margin: auto;
   font-size: 0.9375rem;
   font-weight: 400;
   line-height: 1.5;
@@ -132,10 +139,8 @@ input {
 .btn {
   cursor: pointer;
   display: block;
-  width: 50%;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
-  margin: auto;
   font-size: 0.9375rem;
   font-weight: 400;
   line-height: 1.5;
