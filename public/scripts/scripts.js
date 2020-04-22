@@ -1,3 +1,4 @@
+import '../styles/bulma.scss';
 import '../styles/experimental.css';
 import '../styles/styles.css';
 import '../styles/helpers.scss';
