@@ -1,3 +1,8 @@
+import '../styles/helpers.css';
+import '../styles/experimental.css';
+import '../styles/styles.css';
+
+// Bulma burger menu code
 document.addEventListener('DOMContentLoaded', () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);

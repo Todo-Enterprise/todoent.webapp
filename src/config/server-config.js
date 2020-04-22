@@ -14,9 +14,9 @@ function configureLogging(app) {
 }
 
 module.exports = (app, express) => {
-  app.set('views', 'public/templates');
+  app.set('views', 'dist/templates');
   app.set('view engine', 'ejs');
-  app.use('/public', express.static('public'));
+  app.use('/dist', express.static('dist'));
   app.engine('.ejs', ejs);
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
