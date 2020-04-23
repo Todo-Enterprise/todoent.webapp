@@ -1,6 +1,8 @@
-const bodyParser = require('body-parser');
+import bodyParser from 'body-parser';
+import ejsExpress from 'ejs';
+
 // eslint-disable-next-line no-underscore-dangle
-const ejs = require('ejs').__express;
+const ejs = ejsExpress.__express;
 
 function configureLogging(app) {
   if (process.env.NODE_ENV === 'dev') {
@@ -13,7 +15,7 @@ function configureLogging(app) {
   }
 }
 
-module.exports = (app, express) => {
+export default (app, express) => {
   app.set('views', 'dist/templates');
   app.set('view engine', 'ejs');
   app.use('/dist', express.static('dist'));

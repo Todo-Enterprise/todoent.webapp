@@ -1,5 +1,5 @@
-const express = require('express');
-const db = require('../services/dal');
+import express from 'express';
+import db from '../services/dal';
 
 const router = express.Router();
 
@@ -16,6 +16,6 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
-module.exports = (app) => {
+export default (app) => {
   app.use('', router);
 };

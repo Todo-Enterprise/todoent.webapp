@@ -29,7 +29,7 @@ function removeTask(/* taskName */) {
   // not implemented
 }
 
-module.exports = {
+export default {
   getTasks,
   addTask,
   removeTask,

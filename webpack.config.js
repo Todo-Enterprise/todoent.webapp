@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, argv) => {
   const buildPath = 'build';
-  const serverMainFilename = 'main.js';
 
   const clientConfig = {
     mode: argv.mode,
@@ -36,12 +35,13 @@ module.exports = (env, argv) => {
     mode: argv.mode,
     target: 'node',
     entry: {
-      server: [path.resolve(__dirname, `src/${serverMainFilename}`)],
+      server: [path.resolve(__dirname, 'src/main.js')],
     },
     output: {
       path: path.resolve(__dirname, buildPath),
       filename: 'src/server.js',
     },
+    devtool: 'inline-source-map',
     module: {
       rules: [
         { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },

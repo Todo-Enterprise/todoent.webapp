@@ -16,7 +16,7 @@ FROM mhart/alpine-node:slim-13
 
 WORKDIR /app
 ENV NODE_ENV prod
-COPY --from=builder /app/build/* ./
+COPY --from=builder /app/build ./
 
 EXPOSE 3000
 
