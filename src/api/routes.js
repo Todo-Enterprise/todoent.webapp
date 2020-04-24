@@ -9,15 +9,19 @@ router.post('/add-task', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  res.render('index', { tasks: db.getTasks() });
+  res.render('index', {
+    currentPage: 'index',
+    tasks: db.getTasks(),
+  });
 });
 
 router.get('/about', (req, res) => {
-  res.render('about');
+  res.render('about', { currentPage: 'about' });
+});
 });
 
 router.get('/login', (req, res) => {
-  res.render('login');
+  res.render('login', { currentPage: 'login' });
 });
 
 router.get('/logout', (req, res) => {

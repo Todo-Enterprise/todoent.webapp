@@ -1,0 +1,41 @@
+<nav class="navbar is-fixed-top is-warning" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item">
+      <span class="icon is-small">
+        <i class="fas fa-stream"></i>
+      </span>
+      <div class="has-pl-2 is-size-5 has-text-weight-bold">TODO Enterprise</div>
+    </span>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/" class="navbar-item is-tab <% if (currentPage == 'index') { %>is-active<% } %>">
+        Home
+      </a>
+      <a href="/about" class="navbar-item is-tab <% if (currentPage == 'about') { %>is-active<% } %>">
+        About
+      </a>
+      <a href="/experiments" class="navbar-item is-tab <% if (currentPage == 'experiments') { %>is-active<% } %>">
+        Experiments
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <!-- <a class="button is-primary"><strong>Sign up</strong></a> -->
+          <a class="button is-primary" href="/login"><strong>Log in</strong></a>
+          <a class="button is-light" href="/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

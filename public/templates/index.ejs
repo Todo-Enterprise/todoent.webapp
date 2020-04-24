@@ -2,46 +2,45 @@
 <html>
 
 <head>
-  <title>TODO Enterprise</title>
-  <link rel="stylesheet" href="dist/main.css">
+  <%- include('partials/head', {
+    currentPage: currentPage,
+  }); %>
 </head>
 
-<body>
-  <div class="header">
-    <div class="title"><a href="/">TODO Enterprise</a></div>
-    
-    <div class="menu">
-      <div><a href="login">Login</a></div>
-      <div><a href="about">About</a></div>
-      <div><a href="/logout">Logout</a></div>
-    </div>
-  </div>
+<body class="has-navbar-fixed-top">
+  
+  <%- include('partials/header', {
+    currentPage: currentPage,
+  }); %>
  
-  <div class="container">
-    <div class="taskInputField">
-      <form id="taskInputForm" action="/add-task" method="post">
-        <p><input name="task" size="67x" type="text"></p>
-        <p><button type="submit">Add new task</button></p>
-      </form>
+  <section class="section">
+    <div class="container is-tablet is-narrow">
+      <div class="taskInputField">
+        <form id="taskInputForm" action="/add-task" method="post">
+          <p><input name="task" size="67x" type="text"></p>
+          <p><button type="submit">Add new task</button></p>
+        </form>
+      </div>
     </div>
-  </div>
+  
+    <div class="container is-tablet is-narrow">
+      <% tasks.forEach(function(task) { %>
+        <% if (task.isDone == true) { %>
+          <div class="done">
+        <% } else { %>
+          <div class="task">
+        <% } %>
+          <div class="finish-button">
+            <div class="check"></div>
+          </div>        
+            <%= task.name %>          
+          </div>
+      <% }); %>
+    </div>
+  </section>
 
-  <div class="container">
-    <% tasks.forEach(function(task) { %>
-      <% if (task.isDone == true) { %>
-        <div class="done">
-      <% } else { %>
-        <div class="task">
-      <% } %>
-        <div class="finish-button">
-          <div class="check"></div>
-        </div>        
-          <%= task.name %>          
-        </div>
-    <% }); %>
-  </div>
+  <%- include('partials/footer'); %>
+
 </body>
-
-<script type="text/javascript" src="dist/bundle.js"></script>
 
 </html>

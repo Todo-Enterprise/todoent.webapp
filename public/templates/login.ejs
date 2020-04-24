@@ -6,15 +6,11 @@
   <link rel="stylesheet" type="text/css" href="dist/main.css">
 </head>
 
-<body>
-  <div class="header">
-    <div class="title"><a href="/">TODO Enterprise</a></div>
+<body class="has-navbar-fixed-top">
 
-    <div class="menu">
-      <div><a href="login">Login</a></div>
-      <div><a href="about">About</a></div>
-    </div>
-  </div>
+  <%- include('partials/header', {
+    currentPage: currentPage,
+  }); %>
 
   <div class="container">
     <form action="/auth/login" method="POST" class="login-form" >
@@ -33,8 +29,8 @@
     </form>
   </div>
 
-</body>
+  <%- include('partials/footer'); %>
 
-<script type="text/javascript" src="dist/bundle.js"></script>
+</body>
 
 </html>
