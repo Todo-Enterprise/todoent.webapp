@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('partials/head', {
+    currentPage: currentPage,
+  }); %>
+</head>
+
+<body class="has-navbar-fixed-top">
+
+  <%- include('partials/header', {
+    currentPage: currentPage,
+  }); %>
+
+  <section class="section">
+    <div class="container is-tablet is-narrow">
+      <h1 class="is-size-1 title">List</h1>
+      <div class="tabs">
+        <ul>
+          <li class="is-active">
+            <a>
+              <span class="icon is-small"><i class="fas fa-long-arrow-alt-down"></i></span>
+              <span>by priority</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon"><i class="fas fa-sort-amount-up-alt"></i></span>
+              <span>by date</span>
+            </a></li>
+          <li>
+            <a>
+              <span class="icon"><i class="fas fa-sort-alpha-up"></i></span>
+              <span>by alphabet</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tasknew box has-mt-4 has-mb-4">
+        <div class="columns is-vcentered is-gapless is-marginless">
+          <div class="checkmark column is-narrow" style="margin-left: 0.75rem; padding-right: 0.6rem !important;">
+            <div class="icon is-small has-text-success is-flex">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <div class="column">
+            <input class="input is-borderless is-shadowless is-marginless is-paddingless"
+              style="margin-right: 10px; padding-right: 0;" type="text" placeholder="Task name 1">
+          </div>
+          <div class="column is-narrow" style="width: 20px;"></div>
+        </div>
+      </div>
+
+      <div class="tasknew box has-mt-4 has-mb-4">
+        <div class="columns is-vcentered is-gapless is-marginless">
+          <div class="column is-narrow" style="margin-left: 0.75rem;">
+            <button class="button button-checkmark is-round" style="width: 25px; height: 25px; padding:0;">
+              <span class="icon is-small is-flex">
+                <i class="fas fa-check"></i>
+              </span>
+            </button>
+          </div>
+          <div class="column">
+            <input class="input is-borderless is-shadowless is-marginless" style="margin-right: 10px; padding-right: 0;"
+              type="text" placeholder="Task name 2">
+          </div>
+          <div class="column is-narrow" style="width: 20px;">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="tasknew columns is-vcentered is-marginless is-gapless has-mt-4 has-mb-4">
+        <div class="column is-narrow has-mr-3">
+          <button class="button button-checkmark is-round" style="width: 25px; height: 25px; padding:0;">
+            <span class="icon is-small is-flex">
+              <i class="fas fa-check"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="column">
+          <div class="tasknew box">
+            <input class="input is-borderless is-shadowless is-marginless" style="margin-right: 10px; padding-right: 0;"
+              type="text" placeholder="Task name 3">
+          </div>
+        </div>
+      </div>
+
+      <div class="tasknew columns is-vcentered is-marginless is-gapless has-mt-4 has-mb-4">
+        <div class="column is-narrow has-ml-3 has-mr-3">
+          <div class="checkmark">
+            <div class="icon is-small has-text-success is-flex">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="tasknew box">
+            <input class="input is-borderless is-shadowless is-marginless" style="margin-right: 10px; padding-right: 0;"
+              type="text" placeholder="Task name 4">
+          </div>
+        </div>
+      </div>
+
+      <div class="tasknew columns is-vcentered is-marginless is-gapless has-mt-4 has-mb-4">
+        <div class="column is-narrow has-ml-3 has-mr-3">
+          <div class="checkmark">
+            <div class="icon is-small has-text-success is-flex">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="tasknew box is-paddingless is-rounded">
+            <input class="input is-rounded is-borderless is-shadowless is-marginless"
+              style="margin-right: 10px; padding-right: 0;" type="text" placeholder="Task name 5">
+          </div>
+        </div>
+      </div>
+
+      <div class="tasknew columns is-vcentered is-marginless is-gapless has-mt-4 has-mb-4">
+        <div class="column is-narrow has-mr-3">
+          <button class="button button-checkmark is-round" style="width: 25px; height: 25px; padding:0;">
+            <span class="icon is-small is-flex">
+              <i class="fas fa-check"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="column">
+          <div class="tasknew box is-paddingless is-rounded">
+            <input class="input is-rounded is-borderless is-shadowless is-marginless"
+              style="margin-right: 10px; padding-right: 0;" type="text" placeholder="Task name 6">
+          </div>
+        </div>
+      </div>
+
+      <div class="box is-paddingless is-rounded has-mt-4 has-mb-4">
+        <div class="columns is-vcentered is-gapless is-marginless">
+          <div class="column is-narrow" style="margin-left: 0.75rem;">
+            <button class="button is-round button-checkmark" style="width: 25px; height: 25px; padding:0;">
+              <span class="icon is-small is-flex">
+                <i class="fas fa-check"></i>
+              </span>
+            </button>
+          </div>
+          <div class="column">
+            <input class="input is-borderless is-shadowless is-marginless" style="margin-right: 10px; padding-right: 0;"
+              type="text" placeholder="Task name 7">
+          </div>
+          <div class="column is-narrow" style="width: 20px;">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="tasknew box is-paddingless is-rounded has-mt-4 has-mb-4">
+        <div class="columns is-vcentered is-gapless is-marginless ">
+          <div class="checkmark column is-narrow" style="margin-left: 0.75rem; padding-right: 0.6rem !important;">
+            <div class="icon is-small has-text-success is-flex">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <div class="column">
+            <input class="input is-borderless is-shadowless is-marginless is-paddingless"
+              style="margin-right: 10px; padding-right: 0;" type="text" placeholder="Task name 8">
+          </div>
+          <div class="column is-narrow" style="width: 20px;">
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <article class="media box has-mt-5">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Вася Пупкин</strong> <small>@vasokpusok</small> <small>31m</small>
+              <br>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor
+              vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <a class="level-item">
+                <span class="icon is-small"><i class="fas fa-reply"></i></span>
+              </a>
+              <a class="level-item">
+                <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+              </a>
+              <a class="level-item">
+                <span class="icon is-small"><i class="fas fa-heart"></i></span>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div class="media-right">
+          <button class="delete"></button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h1 class="title">Containers</h1>
+    <div class="subtitle">Try to change your browser width and see the difference of the containers adaptation</div>
+    <div class="container is-mobile is-narrow has-mt-3" style="background-color: #5b5;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-mobile.is-narrow
+      </div>
+    </div>
+
+    <div class="container is-tablet is-narrow has-mt-3" style="background-color: #88c;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-tablet.is-narrow
+      </div>
+    </div>
+
+    <div class="container is-desktop is-narrow has-mt-3" style="background-color: #bb5;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-desktop.is-narrow
+      </div>
+    </div>
+
+    <div class="container is-widescreen is-narrow has-mt-3" style="background-color: #b5b;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-widescreen.is-narrow
+      </div>
+    </div>
+
+    <div class="container is-fullhd is-narrow has-mt-3" style="background-color: #b55;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-fullhd.is-narrow
+      </div>
+    </div>
+
+    <div class="container has-mt-3" style="background-color: #ddd;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container
+      </div>
+    </div>
+
+    <div class="container is-fullhd has-mt-3" style="background-color: #b55;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-fullhd
+      </div>
+    </div>
+
+    <div class="container is-widescreen has-mt-3" style="background-color: #b5b;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-widescreen
+      </div>
+    </div>
+
+    <div class="container is-desktop has-mt-3" style="background-color: #bb5;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-desktop
+      </div>
+    </div>
+
+    <div class="container is-tablet has-mt-3" style="background-color: #88c;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-tablet
+      </div>
+    </div>
+
+    <div class="container is-mobile has-mt-3" style="background-color: #5b5;">
+      <div class="has-pt-3 has-pb-3 has-text-centered">
+        .container.is-mobile
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <h1 class="title">Spacing</h1>
+    <div class="subtitle">
+      m – margin, p – padding, t – top, b – bottom, r – right, l – left
+    </div>
+    <div class="container is-fullhd has-background-primary has-text-white">
+      <div>
+        <div class="has-ml-1" style="background-color: #0a0a0a; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-ml-1</span>
+        </div>
+  
+        <div class=has-ml-2" style="background-color: #0a0a0a; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-ml-2</span>
+        </div>
+
+        <div class="has-ml-3" style="background-color: #0a0a0a; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-ml-3</span>
+        </div>
+
+        <div class="has-m-5" style="background-color: #0a0a0a; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-m-5</span>
+        </div>
+
+        <div class="has-mr-4" style="background-color: #0a0a0a; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-mr-4</span>
+        </div>
+
+        <div class="has-mr-5" style="background-color: #0a0a0a; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-mr-5</span>
+        </div>
+
+        <div class="has-mt-6" style="background-color: #0a0a0a; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-mt-6</span>
+        </div>
+
+        <div class="has-mb-7" style="background-color: #0a0a0a; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-mb-7</span>
+        </div>
+
+        <div class="has-p-1" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-p-1</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-p-2" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-p-2</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-p-3" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-p-3</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-p-4" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-p-4</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-pl-5" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-pl-5</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-pl-6" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-pl-6</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-pr-5" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-pr-5</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-pr-6" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-pr-6</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-pr-7" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-pr-7</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-pb-6" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-pb-6</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+
+        <div class=" has-pt-7" style="background-color: #3298dc; border: 1px solid yellow;">
+          This block is defined with class <span class="tag is-medium">.has-pt-7</span>
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a 
+          a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <%- include('partials/footer'); %>
+
+</body>
+
+</html>

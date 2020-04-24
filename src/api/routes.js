@@ -18,6 +18,9 @@ router.get('/', (req, res) => {
 router.get('/about', (req, res) => {
   res.render('about', { currentPage: 'about' });
 });
+
+router.get('/experiments', (req, res) => {
+  res.render('experiments', { currentPage: 'experiments' });
 });
 
 router.get('/login', (req, res) => {
