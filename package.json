@@ -20,6 +20,7 @@
     "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.2",
+    "del-cli": "^3.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.20.1",
@@ -35,7 +36,7 @@
   },
   "scripts": {
     "build": "webpack --mode=production",
-    "clean": "rm -rf build",
+    "clean": "del-cli build",
     "dev": "run-s clean dev:build dev:parallel",
     "dev:parallel": "run-p dev:watch dev:server",
     "dev:server": "cd build && babel-watch ./src/server.js",
