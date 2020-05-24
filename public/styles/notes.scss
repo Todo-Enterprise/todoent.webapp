@@ -1,0 +1,84 @@
+@import './bulma.scss';
+
+$note-card-padding: 1.25rem;
+
+.note-container {
+
+  input {
+    color: $grey-dark;
+  }
+
+  .checkmark * {
+    color: transparent;
+  }
+
+  &:not(.is-done):hover {
+    .checkmark * {
+      cursor: pointer;
+      color: #ccc;
+    }
+  
+    .checkmark:hover * {
+      color: #999;
+    }
+
+    .checkmark:active * {
+      color: $success-dark;
+    }
+  }
+
+  .card {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    .card-header {
+      padding: 0 $note-card-padding;
+
+      .card-header-title {
+        padding: 0;
+
+        input {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .card-content {
+      border-top: 1px solid #ededed;
+      padding: 0;
+
+      textarea {
+        padding: 0.5rem $note-card-padding;
+        width: 100%;
+        min-height: 150px;
+        border: none;
+        background-color: transparent;
+        font: inherit;
+        resize: vertical;
+        outline: none;
+      }
+    }
+
+    .card-footer {
+
+    }
+  }
+
+  &:not(.is-opened) .card {
+    .card-content, .card-footer {
+      display: none;
+    }
+  }
+
+  &.is-done {
+    input {
+      color: $grey;
+    }
+
+    & .card, input  {
+      background-color: #ccc;
+    }
+  }
+}

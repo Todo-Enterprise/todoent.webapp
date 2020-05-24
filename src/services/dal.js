@@ -1,36 +1,54 @@
 const memoryDatabase = {
-  tasks: [
-    {
-      id: 0, name: 'Test task', isDone: false, addedAt: '2020.01.01',
-    },
-    {
-      id: 0, name: 'Test done task', isDone: true, addedAt: '2020.01.01',
-    },
-  ],
+  notes: {},
 };
 
-function Task(name) {
-  this.id = 0;
-  this.name = name;
+let lastId = 0;
+
+memoryDatabase.notes[lastId] = {
+  id: 0, title: 'Test note', content: 'Нужно, чтоб отображались нормально теги, как в карточке ниже', isDone: false, addedAt: '2020.01.01',
+};
+lastId += 1;
+memoryDatabase.notes[lastId] = {
+  id: 1, title: 'Test done note', content: '1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a><time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>', isDone: true, addedAt: '2020.01.01',
+};
+lastId += 1;
+
+function Note(title, content) {
+  this.id = lastId;
+  this.title = title;
+  this.content = content;
   this.isDone = false;
   this.addedAt = '2020.01.01';
 }
 
-function getTasks() {
-  return memoryDatabase.tasks;
+function getAllNotes() {
+  return Object.values(memoryDatabase.notes);
 }
 
-function addTask(name) {
-  const constructionTask = new Task(name);
-  memoryDatabase.tasks.push(constructionTask);
+function insertNote(note) {
+  const constructedNote = new Note(note.title, note.content);
+  memoryDatabase.notes[lastId] = constructedNote;
+  lastId += 1;
+
+  return constructedNote;
 }
 
-function removeTask(/* taskName */) {
+function getNote(id) {
+  return memoryDatabase.notes[id];
+}
+
+function saveNote(id, note) {
+  memoryDatabase.notes[id] = note;
+}
+
+function deleteNote(/* noteName */) {
   // not implemented
 }
 
 export default {
-  getTasks,
-  addTask,
-  removeTask,
+  getNote,
+  getAllNotes,
+  insertNote,
+  saveNote,
+  deleteNote,
 };

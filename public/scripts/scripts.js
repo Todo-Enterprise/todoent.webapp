@@ -1,26 +1,57 @@
-import '../styles/bulma.scss';
-import '../styles/helpers.scss';
+import './bulma';
+import Note from './note';
+
+// import '../styles/bulma.scss';
+import '../styles/notes.scss';
+
 import '../styles/styles.css';
-import '../styles/experimental.css';
+import '../styles/helpers.scss';
 
-// Bulma burger menu code
-document.addEventListener('DOMContentLoaded', () => {
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+// Need to remove jquery
 
-  // Check if there are any navbar burgers
-  if ($navbarBurgers.length > 0) {
-    // Add a click event on each of them
-    $navbarBurgers.forEach((el) => {
-      el.addEventListener('click', () => {
-        // Get the target from the "data-target" attribute
-        const { target } = el.dataset;
-        const $target = document.getElementById(target);
+function createNewNote() {
+  const $noteContainer = $('#note-template .note-container').clone();
+  $noteContainer.appendTo('.notes-list');
+  $noteContainer.removeClass('is-hidden');
+  $noteContainer.addClass('js-is-transient');
+  return new Note($noteContainer);
+}
 
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-      });
-    });
+$(document).on('focus', '.note-container input', (e) => {
+  const note = new Note($(e.currentTarget).closest('.note-container'));
+  if (note.isOpened()) return;
+
+  const openedContainer = $('.note-container.is-opened');
+  if (openedContainer.length) {
+    const openedNote = new Note(openedContainer);
+    openedNote.save();
+    openedNote.hide();
   }
+
+  note.show();
+});
+
+$(document).on('click', '.note-container:not(.is-done) .checkmark', (e) => {
+  const note = new Note($(e.currentTarget).closest('.note-container'));
+  note.complete();
+});
+
+$(document).on('click', '.note-container .save-btn', (e) => {
+  const note = new Note($(e.currentTarget).closest('.note-container'));
+  note.hide();
+  note.save();
+});
+
+$(document).on('click', '.add-note-btn', (e) => {
+  if ($('.note-container.js-is-transient').length) return;
+
+  const openedContainer = $('.note-container.is-opened');
+  if (openedContainer.length) {
+    const openedNote = new Note(openedContainer);
+    openedNote.save();
+    openedNote.hide();
+  }
+
+  const note = createNewNote();
+  note.focusTitle();
 });

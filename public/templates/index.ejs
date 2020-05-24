@@ -8,35 +8,52 @@
 </head>
 
 <body class="has-navbar-fixed-top">
-  
+
   <%- include('partials/header', {
     currentPage: currentPage,
   }); %>
- 
+
   <section class="section">
+
     <div class="container is-tablet is-narrow">
-      <div class="taskInputField">
-        <form id="taskInputForm" action="/add-task" method="post">
-          <p><input name="task" size="67x" type="text"></p>
-          <p><button type="submit">Add new task</button></p>
-        </form>
+      <h1 class="is-size-1 title">Your notes</h1>
+      <div class="tabs">
+        <ul>
+          <li class="is-active">
+            <a>
+              <span class="icon is-small"><i class="fas fa-long-arrow-alt-down"></i></span>
+              <span>by priority</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon"><i class="fas fa-sort-amount-up-alt"></i></span>
+              <span>by date</span>
+            </a></li>
+          <li>
+            <a>
+              <span class="icon"><i class="fas fa-sort-alpha-up"></i></span>
+              <span>by alphabet</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="notes-list">
+        <% notes.forEach(function(note) { %>
+        <%- include('partials/note', { note }); %>
+        <% }); %>
+      </div>
+
+      <div class="has-pl-5">
+        <a class="add-note-btn">+ Add new note</a>
       </div>
     </div>
-  
-    <div class="container is-tablet is-narrow">
-      <% tasks.forEach(function(task) { %>
-        <% if (task.isDone == true) { %>
-          <div class="done">
-        <% } else { %>
-          <div class="task">
-        <% } %>
-          <div class="finish-button">
-            <div class="check"></div>
-          </div>        
-            <%= task.name %>          
-          </div>
-      <% }); %>
+
+    <div id="note-template">
+      <%- include('partials/note', { note: { isHidden: true } }); %>
     </div>
+
   </section>
 
   <%- include('partials/footer'); %>
