@@ -2,8 +2,9 @@
 <html>
 
 <head>
-  <title>TODO Enterprise</title>
-  <link rel="stylesheet" type="text/css" href="dist/main.css">
+  <%- include('partials/head', {
+    currentPage: currentPage,
+  }); %>
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -13,20 +14,27 @@
   }); %>
 
   <section class="section">
-    <div class="container">
-      <form action="/auth/login" method="POST" class="login-form" >
+    <div class="container is-mobile is-narrow">
+      <form action="/auth/login" method="POST" class="login-form">
         <h2 class="title">Login</h2>
-        <div class="form-group">
-          <label for="InputEmail" >Email address</label>
-          <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        <div class="field">
+          <label>Email address</label>
+          <div class="control">
+            <input type="email" class="input" id="loginEmail" placeholder="Enter email">
+          </div>
           <p class="help has-text-grey">We'll never share your email with anyone else.</p>
         </div>
-  
-        <div class="form-group">
-          <label for="InputPassword">Password</label>
-          <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+
+        <div class="field">
+          <label>Password</label>
+          <div class="control">
+            <input type="password" class="input" id="loginPassword" placeholder="Password">
+          </div>
         </div>
-        <button class="button" type="submit">Log in</button>
+        <div class="control">
+          <button class="button" type="submit">Log in</button>
+        </div>
+
       </form>
     </div>
   </section>
