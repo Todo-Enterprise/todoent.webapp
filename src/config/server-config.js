@@ -5,11 +5,12 @@ import ejsExpress from 'ejs';
 const ejs = ejsExpress.__express;
 
 function configureLogging(app) {
-  if (process.env.NODE_ENV === 'dev') {
+  if (process.env.NODE_ENV === 'development') {
     app.use((req, res, next) => {
-      console.info(`[${new Date().toISOString()}]: ${req.method} ${req.originalUrl}\n`
+      console.log(`[${new Date().toISOString()}]: ${req.method} ${req.originalUrl}\n`
         + `Headers: ${JSON.stringify(req.headers, null, 2)} \n`
-        + `Body: ${JSON.stringify(req.body, null, 2)}`);
+        + `Body: ${JSON.stringify(req.body, null, 2)} \n`
+        + `BodyRaw: ${req.body} \n`);
       next();
     });
   }
